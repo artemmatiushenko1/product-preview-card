@@ -1,7 +1,12 @@
 #root {
-  height: 100dvh;
+  min-height: 100dvh;
   background-color: var(--app-primary-bc);
+  padding: 20px;
+}
+
+.cardsContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
