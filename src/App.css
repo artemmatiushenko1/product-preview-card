@@ -1,0 +1,7 @@
+#root {
+  height: 100dvh;
+  background-color: var(--app-primary-bc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

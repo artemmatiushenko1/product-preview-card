@@ -1,0 +1,55 @@
+.cardContainer {
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  background-color: var(--text-dark-contrast);
+  overflow: hidden;
+}
+
+.previewImgContainer img {
+  height: 400px;
+  display: block;
+}
+
+.cardInfoContainer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardCategory {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.addToCartBtn {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-dark-contrast);
+  background-color: var(--app-primary);
+  font-family: 18px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.discountedPrice {
+  color: var(--app-primary);
+  font-weight: 600;
+  font-family: var(--text-family-primary);
+  font-size: 26px;
+  margin-right: 20px;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,39 @@
+:root {
+  --app-primary: hsl(158, 36%, 37%);
+  --app-primary-bc: hsl(30, 38%, 92%);
+
+  --text-primary: hsl(212, 21%, 14%);
+  --text-secondary: hsl(228, 12%, 48%);
+  --text-dark-contrast: hsl(0, 0%, 100%);
+
+  --text-body: 14px;
+  --text-family-primary: 'Fraunces', serif;
+  --text-family-secondary: 'Montserrat', serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--text-family-secondary);
+}
+
+h1 {
+  font-family: var(--text-family-primary);
+  color: var(--text-primary);
+}
+
+p {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+}
+
+button {
+  font-family: inherit;
+}
