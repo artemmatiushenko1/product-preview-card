@@ -9,8 +9,8 @@
 .cardContainer {
   max-width: 750px;
   width: 100%;
+
   resize: horizontal;
   overflow: auto;
-
   container-type: inline-size;
 }

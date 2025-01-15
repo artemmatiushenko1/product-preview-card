@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 10px;
+
+  max-width: 1200px;
+  resize: horizontal;
+  overflow: auto;
+
+  margin: 0 auto;
+}
+
+.gridItem {
+  container-type: inline-size;
+}
+
+.grid .gridItem:first-child {
+  grid-column: 1/-1;
+}
+
+.grid .gridItem:last-child {
+  grid-column: 2/-1;
+  grid-row: 3/6;
+}
+
+.grid .gridItem:first-child .card,
+.grid .gridItem:last-child .card {
+  max-width: unset;
+}
