@@ -1,14 +1,10 @@
 .cardContainer {
-  max-width: 650px;
+  max-width: 750px;
   width: 100%;
-  container-type: inline-size;
-}
+  resize: horizontal;
+  overflow: auto;
 
-@container (max-width: 600px) {
-  .cardContainer .card {
-    flex-direction: column;
-    height: 100%;
-  }
+  container-type: inline-size;
 }
 
 .card {
@@ -17,7 +13,6 @@
   background-color: var(--text-dark-contrast);
   overflow: hidden;
   height: 400px;
-  container-type: inline-size;
 }
 
 .previewImgContainer {
@@ -57,6 +52,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  width: 100%;
   margin-top: auto;
 }
 
@@ -74,7 +70,12 @@
 }
 
 @container (max-width: 600px) {
-  h1 {
+  .card {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .cardTitle {
     font-size: 16px;
   }
 
@@ -104,5 +105,94 @@
   .cardInfoContainer {
     gap: 10px;
     padding: 15px;
+  }
+}
+
+@container (max-width: 400px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+  .cardCategory,
+  .cardDescription {
+    display: none;
+  }
+
+  .previewImgContainer {
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 10px;
+  }
+
+  .previewImgContainer img {
+    width: 100%;
+  }
+}
+
+@container (max-width: 310px) {
+  .card {
+    padding-left: 10px;
+  }
+
+  .cardInfoContainer {
+    padding: 12px;
+  }
+
+  .previewImgContainer {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cardInfoContainer {
+    overflow: hidden;
+  }
+
+  .cardTitle {
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .discountedPrice {
+    margin-right: 10px;
+  }
+
+  .addToCartBtn {
+    margin-left: auto;
+    width: auto;
+  }
+
+  .addToCartBtn span {
+    display: none;
+  }
+}
+
+@container (max-width: 250px) {
+  .card {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .previewImgContainer {
+    width: 100%;
+  }
+
+  .cardInfoContainer {
+    width: 100%;
+    padding: 0;
+  }
+
+  .addToCartBtn {
+    width: 100%;
+  }
+
+  .cardTitle,
+  .originalPrice,
+  .discountedPrice {
+    display: none;
   }
 }

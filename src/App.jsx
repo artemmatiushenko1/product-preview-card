@@ -42,19 +42,6 @@ const products = [
 function App() {
   return (
     <div style={{ display: 'flex', gap: 20 }}>
-      <div className="cardsContainer" style={{ width: '650px' }}>
-        {products.map((product) => (
-          <ProductPreviewCard
-            key={product.id}
-            title={product.title}
-            category={product.category}
-            description={product.description}
-            originalPrice={product.originalPrice}
-            previewImg={product.desktopImgSrc}
-            discountedPrice={product.discountedPrice}
-          />
-        ))}
-      </div>
       <div className="sidebar" style={{ width: '400px' }}>
         {[products[0]].map((product) => (
           <ProductPreviewCard
