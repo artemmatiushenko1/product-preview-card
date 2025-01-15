@@ -1,0 +1,16 @@
+.singleCardDemo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 100%;
+}
+
+.cardContainer {
+  max-width: 750px;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+
+  container-type: inline-size;
+}
