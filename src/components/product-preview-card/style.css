@@ -34,6 +34,12 @@
   letter-spacing: 5px;
 }
 
+.addToCartBtnContainer {
+  container-type: inline-size;
+  container-name: add-to-cart-container;
+  margin-top: auto;
+}
+
 .addToCartBtn {
   border: none;
   display: flex;
@@ -48,7 +54,6 @@
   cursor: pointer;
   font-weight: 600;
   width: 100%;
-  margin-top: auto;
 }
 
 .discountedPrice {
@@ -158,11 +163,6 @@
 
   .addToCartBtn {
     margin-left: auto;
-    width: auto;
-  }
-
-  .addToCartBtn span {
-    display: none;
   }
 }
 
@@ -181,13 +181,19 @@
     padding: 0;
   }
 
-  .addToCartBtn {
-    width: 100%;
-  }
-
   .cardTitle,
   .originalPrice,
   .discountedPrice {
+    display: none;
+  }
+}
+
+@container add-to-cart-container (max-width: 150px) {
+  .addToCartBtn {
+    width: auto;
+  }
+
+  .addToCartBtn span {
     display: none;
   }
 }

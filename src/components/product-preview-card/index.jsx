@@ -26,10 +26,12 @@ export default function ProductPreviewCard(props) {
           <span className="discountedPrice">${discountedPrice}</span>
           <span className="originalPrice">${originalPrice}</span>
         </div>
-        <button className="addToCartBtn">
-          <IconCart />
-          <span>Add to cart</span>
-        </button>
+        <div className="addToCartBtnContainer">
+          <button className="addToCartBtn">
+            <IconCart />
+            <span>Add to cart</span>
+          </button>
+        </div>
       </div>
     </div>
   );
