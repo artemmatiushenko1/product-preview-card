@@ -1,4 +1,5 @@
 import './App.css';
+// eslint-disable-next-line no-unused-vars
 import { GridDemo } from './components/grid-demo';
 import { SingleCardDemo } from './components/single-card-demo';
 
