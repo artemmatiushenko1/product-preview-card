@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <SingleCardDemo />
-      {/* <GridDemo /> */}
+      <GridDemo />
     </>
   );
 }
