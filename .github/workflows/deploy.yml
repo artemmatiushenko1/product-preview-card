@@ -28,10 +28,10 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ec2-user
+          username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "dist/*"
-          target: "/home/ec2-user/vite-app"
+          target: "/home/ubuntu/vite-app"
 
       - name: SSH into EC2 and reload app
         uses: appleboy/ssh-action@v1.0.3
