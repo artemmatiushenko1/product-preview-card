@@ -6,7 +6,7 @@ import previewImgDesktop from '../../assets/image-product-desktop.jpg';
 export default function ProductPreviewCard(props) {
   const {
     category,
-    title = 'Gabrielle Essence Eau De Parfum',
+    title = 'Nicolas Essence Eau De Parfum',
     description = 'A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.',
     originalPrice = '169.99',
     discountedPrice = '149.99',
