@@ -1,5 +1,5 @@
 import './App.css';
-import { GridDemo } from './components/grid-demo';
+// import { GridDemo } from './components/grid-demo';
 import { SingleCardDemo } from './components/single-card-demo';
 
 function App() {
