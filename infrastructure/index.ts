@@ -1,6 +1,9 @@
 import * as aws from '@pulumi/aws';
 import { PUBLIC_KEY_NAME, PUBLIC_KEY } from './constats';
 
+const bucket = new aws.s3.BucketV2('test-bucket');
+export const bucketName = bucket.id;
+
 // Створення SSH ключа
 const keyPair = new aws.ec2.KeyPair(PUBLIC_KEY_NAME, { publicKey: PUBLIC_KEY });
 
