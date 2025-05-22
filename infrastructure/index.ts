@@ -1,5 +1,5 @@
 import * as aws from '@pulumi/aws';
-import { PUBLIC_KEY_NAME, PUBLIC_KEY, PUBLIC_KEY_ARTEM } from './constants';
+import { PUBLIC_KEY_NAME, PUBLIC_KEY } from './constants';
 
 // Створення SSH ключа
 const keyPair = new aws.ec2.KeyPair(PUBLIC_KEY_NAME, { publicKey: PUBLIC_KEY });
