@@ -1,14 +1,16 @@
 name: Pulumi
 on:
-  - pull_request
+  push:
+    branches:
+      - master
 
 defaults:
   run:
     working-directory: infrastructure
 
 jobs:
-  preview:
-    name: Preview
+  update:
+    name: Update
     runs-on: ubuntu-latest
 
     steps:
@@ -30,11 +32,11 @@ jobs:
       - name: Install Pulumi dependencies
         run: npm install
 
-      - name: Pulumi Preview
+      - name: Pulumi Update
         uses: pulumi/actions@v6
         with:
           work-dir: ./infrastructure
-          command: preview
+          command: up
           stack-name: artemmatiushenko1-org/dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
