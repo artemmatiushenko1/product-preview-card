@@ -50,8 +50,12 @@ const ec2Instance = new aws.ec2.Instance('my-ec2-instance', {
     Name: 'MyEC2Instance',
   },
   userData: `#!/bin/bash
-  sudo apt install docker.io -y
-  sudo echo ${PUBLIC_KEY_ARTEM} > ~/.ssh/authorized_keys
+  echo "Installing Docker 🔥!"
+  sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  sudo apt-cache policy docker-ce
+  sudo apt install -y docker-ce
   `,
 });
 
