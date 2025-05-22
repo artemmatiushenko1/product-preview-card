@@ -31,10 +31,27 @@ const securityGroup = new aws.ec2.SecurityGroup('my-security-group', {
   ],
 });
 
+const ubuntu = aws.ec2.getAmi({
+  mostRecent: true,
+  filters: [
+    {
+      name: 'name',
+      values: [
+        'ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20250305',
+      ],
+    },
+    {
+      name: 'virtualization-type',
+      values: ['hvm'],
+    },
+  ],
+  owners: ['099720109477'],
+});
+
 // Створення EC2 інстансу
 const ec2Instance = new aws.ec2.Instance('my-ec2-instance', {
-  ami: 'ami-04f7a54071e74f488',
-  instanceType: 't2.micro',
+  ami: ubuntu.then((ubuntu) => ubuntu.id),
+  instanceType: aws.ec2.InstanceType.T2_Micro,
   keyName: keyPair.keyName,
   securityGroups: [securityGroup.name],
   tags: {
