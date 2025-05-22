@@ -4,15 +4,6 @@ import { PUBLIC_KEY_NAME, PUBLIC_KEY } from './constants';
 // Створення SSH ключа
 const keyPair = new aws.ec2.KeyPair(PUBLIC_KEY_NAME, { publicKey: PUBLIC_KEY });
 
-const iamUser = new aws.iam.User('ec2-user');
-
-const iamAccessKey = new aws.iam.AccessKey('ec2-user-key', {
-  user: iamUser.name,
-});
-
-export const accessKeyId = iamAccessKey.id;
-export const secretAccessKey = iamAccessKey.secret;
-
 // Створення Security Group
 const securityGroup = new aws.ec2.SecurityGroup('my-security-group', {
   description: 'Allow SSH and HTTP',
