@@ -2,6 +2,10 @@ name: Pulumi Preview
 on:
   - pull_request
 
+defaults:
+  run:
+    working-directory: infrastructure
+
 jobs:
   preview:
     name: Preview
@@ -29,7 +33,7 @@ jobs:
       - name: Pulumi Preview
         uses: pulumi/actions@v6
         with:
-          work-dir: infrastructure
+          work-dir: ./infrastructure
           command: preview
           stack-name: artemmatiushenko1-org/dev
         env:
