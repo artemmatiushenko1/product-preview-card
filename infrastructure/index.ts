@@ -42,13 +42,16 @@ const securityGroup = new aws.ec2.SecurityGroup('my-security-group', {
 
 // Створення EC2 інстансу
 const ec2Instance = new aws.ec2.Instance('my-ec2-instance', {
-  ami: 'ami-04f7a54071e74f488', // Виберіть правильну AMI для вашого регіону
+  ami: 'ami-04f7a54071e74f488',
   instanceType: 't2.micro',
   keyName: keyPair.keyName,
   securityGroups: [securityGroup.name],
   tags: {
     Name: 'MyEC2Instance',
   },
+  userData: `#!/bin/bash
+  sudo apt install docker.io -y
+  `,
 });
 
 export const publicIp = ec2Instance.publicIp;
