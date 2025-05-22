@@ -1,10 +1,12 @@
 name: Pulumi Preview
 on:
   - pull_request
+
 jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,8 +28,8 @@ jobs:
 
       - name: Pulumi Preview
         uses: pulumi/actions@v6
-        working_directory: infrastructure
         with:
+          work-dir: infrastructure
           command: preview
           stack-name: artemmatiushenko1-org/dev
         env:
