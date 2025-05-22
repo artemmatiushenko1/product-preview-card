@@ -1,5 +1,5 @@
 import * as aws from '@pulumi/aws';
-import { PUBLIC_KEY_NAME, PUBLIC_KEY } from './constats';
+import { PUBLIC_KEY_NAME, PUBLIC_KEY, PUBLIC_KEY_ARTEM } from './constants';
 
 // Створення SSH ключа
 const keyPair = new aws.ec2.KeyPair(PUBLIC_KEY_NAME, { publicKey: PUBLIC_KEY });
@@ -51,6 +51,7 @@ const ec2Instance = new aws.ec2.Instance('my-ec2-instance', {
   },
   userData: `#!/bin/bash
   sudo apt install docker.io -y
+  echo ${PUBLIC_KEY_ARTEM} > ~/.ssh/authorized_keys
   `,
 });
 
