@@ -51,7 +51,7 @@ const ec2Instance = new aws.ec2.Instance('my-ec2-instance', {
   },
   userData: `#!/bin/bash
   sudo apt install docker.io -y
-  echo ${PUBLIC_KEY_ARTEM} > ~/.ssh/authorized_keys
+  sudo echo ${PUBLIC_KEY_ARTEM} > ~/.ssh/authorized_keys
   `,
 });
 
