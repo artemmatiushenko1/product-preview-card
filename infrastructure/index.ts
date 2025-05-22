@@ -4,7 +4,7 @@ import { PUBLIC_KEY_NAME, PUBLIC_KEY } from './constats';
 const bucket = new aws.s3.BucketV2('test-bucket');
 export const bucketName = bucket.id;
 
-const bucket2 = new aws.s3.BucketV2('test-bucket');
+const bucket2 = new aws.s3.BucketV2('test-bucket2');
 export const bucketName2 = bucket2.id;
 
 // Створення SSH ключа
