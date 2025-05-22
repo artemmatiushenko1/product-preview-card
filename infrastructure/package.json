@@ -11,6 +11,6 @@
     "@pulumi/pulumi": "^3.113.0"
   },
   "engines": {
-    "node": "22.9.0"
+    "node": "v22.9.0"
   }
 }
